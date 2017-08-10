@@ -1,0 +1,64 @@
+﻿<Page
+    x:Class="converter.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:converter"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:UI="using:Microsoft.Advertising.WinRT.UI"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" RequestedTheme="Dark">
+
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+
+        <UI:AdControl Grid.Row="3" ApplicationId="9n7d3hgcpfq8"
+              AdUnitId="11692243"
+              HorizontalAlignment="Center"
+              Height="100"
+              VerticalAlignment="Bottom"
+              Width="300"/>
+        
+        <StackPanel Grid.Row="0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="#FF212334">
+            <TextBlock Text="Converter" FontSize="35" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1">
+            <TextBlock Text="Select a conversion and enter data" FontSize="25" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Name="errorMessage" FontSize="20" HorizontalAlignment="Center" Foreground="Red"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Stretch">
+            <StackPanel HorizontalAlignment="Right">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Text="Input:"/>
+                <TextBox Name="input" MinWidth="100"/>
+                <ComboBox Name="inputSelection" SelectedIndex="0" MinWidth="100">
+                    <ComboBoxItem>Decimal</ComboBoxItem>
+                    <ComboBoxItem>Binary</ComboBoxItem>
+                    <ComboBoxItem>Hex</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock Text="Output:"/>
+                <TextBox Name="output" MinWidth="100"/>
+                <ComboBox Name="outputSelection" SelectedIndex="0" MinWidth="100">
+                    <ComboBoxItem>Decimal</ComboBoxItem>
+                    <ComboBoxItem>Binary</ComboBoxItem>
+                    <ComboBoxItem>Hex</ComboBoxItem>
+                </ComboBox>
+            </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
+        <Button Content="CONVERT" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Top" Height="50" Width="110" Click="Button_Click"/>
+
+    </Grid>
+</Page>
